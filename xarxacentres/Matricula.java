@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package xarxacentres;
+
 import java.util.ArrayList;
 
 /**
@@ -20,7 +21,7 @@ public class Matricula {
     private ArrayList<MateriaQualificacio> qualif;
 
     public Matricula(String data) {
-        dataMatriculacio=data;
+        dataMatriculacio = data;
         materias = new ArrayList<Materia>();
         qualif = new ArrayList<MateriaQualificacio>();
     }
@@ -56,28 +57,26 @@ public class Matricula {
     public void setDataMatriculacio(String dataMatriculacio) {
         this.dataMatriculacio = dataMatriculacio;
     }
-    
-        public boolean addMateria(Materia materia){
-        for(int i = 0;i<materias.size();i++){
-            if(materias.get(i)==materia){
+
+    public boolean addMateria(Materia materia) {
+        for (int i = 0; i < materias.size(); i++) {
+            if (materias.get(i) == materia) {
                 return false;
             }
         }
         materias.add(materia);
-        return true;        
+        return true;
     }
-    
-    public boolean addQualif(Materia materia,int nota){
-        for(int i = 0;i<qualif.size();i++){
-            if(qualif.get(i).getMateria()==materia){
+
+    public boolean addQualif(Materia materia, int nota) {
+        for (int i = 0; i < qualif.size(); i++) {
+            if (qualif.get(i).getMateria() == materia) {
                 return false;
             }
         }
-        MateriaQualificacio qual= new MateriaQualificacio(materia,nota);
+        MateriaQualificacio qual = new MateriaQualificacio(materia, nota);
         qualif.add(qual);
         return true;
     }
 
-    
-    
 }
